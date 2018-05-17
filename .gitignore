@@ -1,6 +1,5 @@
 
 
-node_module/
-package-lock.json
+node_modules/
 
-.idea
+.idea/
