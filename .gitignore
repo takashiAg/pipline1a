@@ -1,2 +1,6 @@
-/node_module/
-/package-lock.json
+
+
+node_module/
+package-lock.json
+
+.idea
