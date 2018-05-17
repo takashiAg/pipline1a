@@ -1,0 +1,24 @@
+{
+  "name": "pipline1a",
+  "version": "0.0.1",
+  "description": "インスタの通知数カウント",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takashiAg/pipline1a.git"
+  },
+  "author": "ryosuke ando",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takashiAg/pipline1a/issues"
+  },
+  "homepage": "https://github.com/takashiAg/pipline1a#readme",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
