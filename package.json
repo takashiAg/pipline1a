@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "f-start":"forever start server.js",
+    "f-stop":"forever stop server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/takashiAg/pipline1a#readme",
   "dependencies": {
+    "forever": "^0.15.3",
     "jquery": "^3.3.1",
     "xmlhttprequest": "^1.8.0"
   }

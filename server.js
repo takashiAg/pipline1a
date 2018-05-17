@@ -1,11 +1,16 @@
 //https://www.instagram.com/oauth/authorize/?client_id=04d70ec29021419eaef7bdada0c31e74&redirect_uri=http://ando.link&response_type=token
+//https://www.instagram.com/oauth/authorize/?client_id=8f6299bc5d9a47b7aac10fd86cec045b&redirect_uri=http://ando.link&response_type=token
+
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-
+/*let parameter = {
+    "access_token": "7758964315.8f6299b.c9ff987d08e048f1a9af4670d383d234"
+};*/
 let parameter = {
     "access_token": "7758964315.04d70ec.b5e313ca8b5c4238bec68f9221d4a043"
 };
+
 let url = "https://api.instagram.com/v1/users/self/media/recent";
 
 let deviceid = "00e04c02dc8e";
@@ -24,11 +29,12 @@ let callback = data => {
 
     if (count >= callback.count_1 + 1) {
         callback.count_1 += 1
-        console.log("動かす")
+        //console.log("動かす")
         move_hand()
     } else if (count < callback.count_1) {
         callback.count_1 = count;
     }
+    console.log(now() + "\nlikes\t:\t" + count);
 
 }
 
@@ -44,9 +50,10 @@ let move_hand = () => {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                console.log(xhr.response);
+                //(xhr.response);
             } else {
                 console.log("error\nstatus = " + xhr.status);
+                console.log("error\nstatus = " + xhr);
             }
         }
     };
@@ -82,7 +89,16 @@ let get = (url, param, callback_function) => {
 
     xhr.send();
 };
-setInterval(get_data, 1000)
+setInterval(get_data, 10000)
 
-
-
+let now = () => {
+    let dt = new Date()
+    let Year = dt.getFullYear()
+    let Month = dt.getMonth()
+    let Day = dt.getDay()
+    let Hour = dt.getHours()
+    let Minuite = dt.getMinutes()
+    let Second = dt.getSeconds()
+    let Millsec = dt.getMilliseconds()
+    return Year + "/" + Month + "/" + Day + " " + Hour + ":" + Minuite + ":" + Second + "." + Millsec;
+}

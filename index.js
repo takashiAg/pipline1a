@@ -11,7 +11,6 @@ let token = "e49776c341419c97b34243f95dd7d79e24ebe19caa2b99d8b83e37e9d8b8c28a";
 let count_1 = 0;
 
 let callback = data => {
-
     let count = data["data"][0]["likes"]["count"];
 
     if (!("count_1" in callback)) {
@@ -38,14 +37,23 @@ let move_hand = () => {
         },
         contentType: 'application/json',
         dataType: 'json',
-        data: '{"percent":100 , "duration_ms":10000}',
+        data: '{"percent":100 , "duration_ms":1700}',
     });
 }
 
 get_data = () => {
+    //let res = $.get(url, parameter)
     $.get(url, parameter, callback)
+    /*res.fail(function (jqXHR, textStatus, errorThrown) {
+
+        console.log(errorThrown);
+        console.log(textStatus);
+        console.log(jqXHR);
+
+        // Etc
+    })*/
 }
 
-//get_data()
+get_data()
 //move_hand()
-setInterval(get_data, 2000)
+//setInterval(get_data, 10000)
